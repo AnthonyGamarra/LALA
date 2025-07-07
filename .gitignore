@@ -1,0 +1,13 @@
+/public/drive
+/public/storage
+/storage/*.key
+/vendor
+!config
+!routes
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log

@@ -1,0 +1,172 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centra todo el contenido en el eje vertical */
+    height: 100vh;
+    margin: 0;
+}
+
+.todo {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    background-color: white;
+    border: 2px solid black;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.container.corto {
+    width: 500px;
+}
+.container.medio {
+    min-width: 680px;
+}
+.container.largo {
+    min-width: 920px;
+}
+#tapa {
+    margin: -20px -20px;
+    text-align: center;
+    margin-bottom: 20px;
+    background-color: #2c559e;
+    color: white;
+    font-size: 14px;
+    height: 6px;
+    padding: 12px 0 24px 0;
+    border-radius: 6px;
+    text-transform:uppercase;
+}
+
+label {
+    font-size: 14px;
+    margin-bottom: 5px;
+    padding-left: 3px;
+    display: block;
+}
+
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type="text"] {
+    border: 2px solid #bbccea;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+button[type="submit"] {
+    background-color: #4CAF50;
+    font-size: 16px;
+}
+
+button[type="submit"]:hover {
+    background-color: #5bcb60;
+}
+
+.verbutton{
+    height: 36px;
+    font-size: 13px !important;
+    background-color: #537ecc !important;
+    padding: 3px;
+}
+.verbutton:hover{
+    background-color: #6794e8 !important;
+}
+
+#retorna{
+    float:left;
+    width:14%;
+    margin: -9px 2px 0 2px;
+}
+#titulo{
+    float:left;
+    width:60%;
+}
+#ver{
+    float: right;
+    width: 24%;
+    margin: -9px 2px 0 2px;
+}
+
+.largo1,.largo2{
+    clear:both;
+    width:100%
+}
+
+.medio1{
+    float: inline-start;
+    width: 50%;
+}
+.medio2{
+    float: inline-start;
+    width: 14%;
+}
+.medio3{
+    float: inline-start;
+    width: 34%;
+    text-align:center;
+}
+.medio4{
+    float: inline-start;
+    width: 80%;
+    text-align:center;
+}
+.medio5{
+    float: inline-start;
+    width: 19%;
+    text-align:center;
+}
+.cuarto{
+    margin-bottom:-10px;
+}
+.cuarto .sel1{
+    width:50%;
+}
+.cuarto .sel2{
+    width:14%;
+}
+.cuarto .but1{
+    width:15%;
+}
+.cuarto .but2{
+    width:15%;
+    background-color:#d6ac08 !important;
+}
+.cuarto .but2:hover{
+    background-color:#d64208 !important;
+}
+
+.largo2 {
+    margin-top: 20px;
+}
+
+
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+    }
+}

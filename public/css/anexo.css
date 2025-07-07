@@ -1,0 +1,452 @@
+body { font-family: 'Nunito', sans-serif; }
+
+.top {
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    background: linear-gradient(to bottom, #dff0ff,#f0f5ff);
+}
+
+.top .izquierda {
+    width: 20%;
+    text-align: left;
+    font-size: 12px;
+    padding: 4px 6px;
+    color: #06365b;
+}
+
+.top .titulo {
+    width: 60%;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: #072a44;
+    text-transform:uppercase;
+}
+
+.top .derecha {
+    display: ruby;
+    width: 20%;                  /* 20% de ancho para el botón Grabar */
+    text-align: right;           /* Alinea el texto a la derecha */
+}
+
+button#volver{
+    float: left;
+    width: 70px;
+    height: 17px;
+    font-size: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    background: #5d6976;transition: all 0.1s ease;
+}
+
+button#volver:hover{
+    filter: brightness(1.3);
+}
+
+
+.derecha button {
+    padding: 8px 15px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius:5px;
+    background-color: #4CAF50;
+    transition: all 0.1s ease;
+}
+.derecha button:hover{
+    filter: brightness(1.3);
+}
+button#actua{background-color: #3a79b9;}
+button#graba{background-color: #4CAF50;}
+
+
+@keyframes gira1 {
+    0%{ transform:rotate(0deg); }
+    100%{ transform: rotate(360deg); } 
+}
+
+#todoengris{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%; 
+    background-color:rgba(0,0,0,0.5);
+    z-index:9999;
+}
+#spin{
+    border: 4px solid rgba(0,0,0,.1);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border-left-color: #09f;
+    animation: gira1 1.5s linear infinite;
+}
+
+.form-group {
+    display: flex;           /* Usamos flexbox para alinear los elementos en línea */
+    align-items: center;     /* Alineamos verticalmente los elementos */
+    height: 20px;
+}
+
+.right-align {
+    text-align: right !important;
+}
+
+/* Estructura de las cabeceras OOCC y OODD */
+.cabezaOOCC, .cabezaOODD {
+    border-radius: 5px;
+    border: 2px solid #c0e0ff;
+}
+
+.cabezaOOCC{ height:180px; }
+.cabezaOODD{ height:100px; }
+
+.cabezaOOCC label, .cabezaOODD label {
+    display: block;
+    background: #f3fbff;
+    width: 150px;
+    font-size: 12px;
+    text-align: right;
+    padding: 2px 8px 2px 0;
+    user-select: none; 
+}
+
+.cabezaOOCC select, .cabezaOODD select,
+.cabezaOOCC input, .cabezaOODD input {
+    width: 44%;
+    height: 19px;
+    text-align: left;
+    border-radius: 4px;
+    padding-left: 6px;
+    border: 1px solid #939393;
+    cursor:default;
+}
+
+.cabezaOOCC select:focus, .cabezaOODD select:focus,
+.cabezaOOCC input:focus, .cabezaOODD input:focus {
+    background-color: white; /* Fondo blanco cuando está activo */
+    border-color: #4CAF50; /* Puedes cambiar el color del borde si lo deseas */
+    outline: none; /* Elimina el borde de enfoque predeterminado del navegador */
+}
+
+.cabezaOOCC input{
+    width: 43.5%;
+}
+.cabezaOODD input {
+    width:320px;
+}
+
+.cabezaOOCC p, .cabezaOODD p {
+    margin: 0;
+    font-size: 10px;
+    padding: 4px 6px;
+    color: #05508b;
+}
+
+.detalle {
+    position: relative; 
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* Para asegurar que las celdas no cambien de tamaño */
+    overflow: auto;
+}
+
+th, td {
+    padding: 0;
+    text-align: center;
+    border: 1px solid #b0b0b0;
+}
+td {
+    position: relative; /* Aseguramos que el símbolo "+" esté dentro de la celda */
+}
+
+th {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+    color:#142f47;
+    width: 130px;
+    padding: 4px 0;
+    font-size:13px;
+    font-weight:600;
+    background: linear-gradient(to bottom, #eaf1ff, #bddfff);
+    user-select: none; 
+}
+
+th:nth-child(1), th:nth-child(2), th:nth-child(3) {
+    position: sticky;
+    z-index: 6; /* Asegura que los encabezados fijos estén encima */
+}        
+
+th:nth-child(1) {
+    left: 0;
+    width:70px;
+}
+th:nth-child(2) {
+    left: 70px; /* Ajuste para la segunda columna, en función del tamaño de las otras celdas */
+    width:80px;
+}
+
+th:nth-child(3) {
+    left: 150px; /* Ajuste para la tercera columna */
+    width:240px;
+}
+
+/* Hacer que las tres primeras columnas se fijen */
+td:nth-child(1), td:nth-child(2), td:nth-child(3) {
+    position: sticky;
+    z-index: 2; /* Asegura que las celdas fijas estén encima */
+}
+td:nth-child(1) {
+    left: 0;
+    background-color: white;
+}
+td:nth-child(2) {
+    left: 70px; /* Ajuste para la segunda columna, en función del tamaño de las otras celdas */
+    width:80px;
+    background-color: #fbfeff;
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: 11px;
+    user-select: none; 
+}
+
+td:nth-child(3) {
+    left: 150px; /* Ajuste para la tercera columna */
+    width:240px;
+    text-align: left;
+    padding: 0 4px;
+    font-weight: 400;
+    font-size: 10px;
+    background-color: #f3fbff;
+}
+
+th:nth-child(6), th:nth-child(7), th:nth-child(8),th:nth-child(9), th:nth-child(10), th:nth-child(11),th:nth-child(12), th:nth-child(13), th:nth-child(14),th:nth-child(15), th:nth-child(16), th:nth-child(17),th:nth-child(18),th:nth-child(19), th:nth-child(20), th:nth-child(21)
+td:nth-child(6), td:nth-child(7), td:nth-child(8),td:nth-child(9), td:nth-child(10), td:nth-child(11),td:nth-child(12), td:nth-child(13), td:nth-child(14),td:nth-child(15), td:nth-child(16), td:nth-child(17),td:nth-child(18),td:nth-child(19), td:nth-child(20), td:nth-child(21)
+{
+    width:85px;
+}
+
+.numegris { color: #a3a3a3; }
+.numegris.not-zero {
+    color: #000; /* Para que el texto sea visible sobre el fondo negro */
+}
+
+tr:nth-child(odd){ background-color: #f2f2f2; }
+tr:nth-child(even){ background-color: #ffffff; }
+
+/* Fila al editar */
+tr.active, td.active {
+    background-color: #fff4b2 !important; /* Color amarillo cuando se edita */
+    transition: background-color 0.3s ease;
+}
+
+/* Estilo para inputs y selects */
+select,input {
+    width: 100%;/*130px;*/
+    height:27px;
+    font-size:12px;
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    text-align: center;
+    transition: background-color .2s ease;
+}
+
+/* Estilo de borde para inputs cuando se edita */
+input:focus, select:focus {
+    outline: auto; 
+    background-color: #c0ffa9;
+}
+
+/* Eliminar el borde del input tipo número */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+td:nth-child(1) input{ width:70px; }
+
+.fcate { background-color: #e2efff !important; color:#000 !important; } 
+.fcateup { background-color: #bcd4f2 !important; color:#000 !important; } 
+.fcateupup { background-color: #92b8e5 !important; color:#000 !important; } 
+tr.fcate input,tr.fcateup input, tr.fcateupup input 
+tr.fcate select,tr.fcateup select,tr.fcateupup select
+ { pointer-events: none; }
+
+
+.add-row-btn, .del-row-btn {
+    position: absolute;
+    z-index: 200;
+    width: 26px;
+    right: 290px;
+    top: 43px;
+    transform: translateY(-160%);
+    font-size: 23px;
+    font-weight: 600;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 50%;
+    opacity:0;
+}
+.add-row-btn {
+    background-color: #4CAF50;
+}
+.del-row-btn {
+    background-color: #c94444;
+    right: 245px;
+    font-weight: 400;
+}
+
+td:hover .add-row-btn , td:hover .del-row-btn {
+    opacity: 1;  /* Aparece con opacidad 1 cuando se pasa el mouse sobre la celda */
+    transition: opacity 0.3s ease, visibility 0s 0s; 
+}
+
+.suggestions {
+    position: absolute;
+    background-color: #f2ffe7;
+    font-size: 10px;
+    max-height: 150px;
+    overflow-y: auto;
+    width: 273px;
+    border-radius: 6px;
+    line-height: 18px;
+    z-index: 50;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestion-item {
+    padding: 8px;
+    cursor: pointer;
+    text-align:left;
+}
+
+.suggestion-item:hover { background-color: #c8ff9c; }
+
+tfoot {
+    padding-top: 20px !important; /* Espacio de 10px entre <tbody> y <tfoot> */
+}
+
+.nota {
+    height:40px;
+    margin: 0;
+    font-size: 10px;
+    padding: 6px;
+    color: #05508b;
+}
+
+.footer {
+    height: 10px;
+    text-align: center;
+    background-color: #2c559e;
+    font-size: 9px;
+    font-style: normal;
+    padding: 4px;
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.footer em {
+    color: #999;
+    text-transform: capitalize;
+}
+
+/** master */
+.master td{
+    font-size:13px;
+    overflow-wrap: break-word;
+    white-space: normal;
+    background-color: white;
+    cursor:default;
+}
+
+/** OOCC */
+.master .m1 th:nth-child(1), .master .m1 td:nth-child(1){ width: 4%;}
+.master .m1 th:nth-child(2), .master .m1 td:nth-child(2){ width: 10%; }
+.master .m1 th:nth-child(3), .master .m1 td:nth-child(3){ width: 10%; }
+.master .m1 th:nth-child(4), .master .m1 td:nth-child(4){ width: 10%; text-align: center; }
+.master .m1 th:nth-child(5), .master .m1 td:nth-child(5){ width: 40%; padding:6px; text-align: justify; }
+.master .m1 th:nth-child(6), .master .m1 td:nth-child(6){ width: 6%; }
+.master .m1 th:nth-child(7), .master .m1 td:nth-child(7){ width: 10%; }
+.master .m1 th:nth-child(8), .master .m1 td:nth-child(8){ width: 10%; }
+/** OODD */
+.master .m2 .m2 th:nth-child(1), .master .m2 td:nth-child(1){ width: 4%; }
+.master .m2 th:nth-child(2), .master .m2 td:nth-child(2){ width: 26%; }
+.master .m2 th:nth-child(3), .master .m2 td:nth-child(3){ width: 25%; text-align:center; }
+.master .m2 th:nth-child(4), .master .m2 td:nth-child(4){ width: 25%; padding-left:1px; }
+.master .m2 th:nth-child(5), .master .m2 td:nth-child(5){ width: 20%; }
+.master .m2 td:nth-child(5){ width:100%;}
+
+.master .m2 ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.master .m2 ul li{ height:29px;text-align: left; align-content: center;padding-left:7px;line-height: 30px;}
+ul li:nth-child(odd) { background-color: #eee; }
+
+.master button{
+    padding: 5px 0;
+    margin:2px 2% 0 2%;
+    height:26px;
+    width: 44%;
+    float: left;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: all 0.1s ease;
+}
+
+.master button.edit{ background-color:#19b413; }
+.master button.elim{ background-color:#c22a2a; }
+.master button.rest{ background-color:#135caf; clear:both; padding: 0 6px;margin-right: 12px;}
+.master button:hover{filter: brightness(1.3);}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+    }
+
+    .detalle {
+        width: 95%;
+    }
+
+    .cabezaOOCC, .cabezaOODD {
+        display: block;
+    }
+
+    .cabezaOOCC label, .cabezaOODD label{ width:88% }
+
+    .cabezaOOCC input, .cabezaOODD input,
+    .cabezaOOCC select, .cabezaOODD select {
+        width: 100%;
+    }
+    .derecha button {
+        width: 70px;
+        height: 21px;
+        padding: 0;
+        font-size: 12px;
+    }
+
+}
