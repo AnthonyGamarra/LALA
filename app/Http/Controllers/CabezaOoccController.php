@@ -307,7 +307,8 @@ class CabezaOoccController extends Controller
                 $query->select('c.id')
                     ->from('cabeza as c')
                     ->join('actioocc as a', 'c.actioocc_id', '=', 'a.id')
-                    ->where('a.fondo', '=', session('fondox'));
+                    ->where('a.fondo', '=', session('fondox'))
+                    ->where('a.oocc_id', '=', session('idocx'));
             })
             ->groupBy('f.id', 'p.id', 'd.tipo', 'f.fondo', 'p.color', 'p.pofi')
             ->orderBy('pofi_id')
