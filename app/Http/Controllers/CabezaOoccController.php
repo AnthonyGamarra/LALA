@@ -266,7 +266,7 @@ class CabezaOoccController extends Controller
             ->orderBy('d.pofi_id')
             ->get();
 
-        $archivo = session('ocx') . '-' . session('nameactiodx') . '.xlsx';
+        $archivo = session('ocx') . '-'  . '.xlsx';
         return Excel::download(new DetalleExportOOCC($detalles, 1), $archivo);
     }
 
