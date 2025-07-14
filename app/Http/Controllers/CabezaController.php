@@ -280,7 +280,7 @@ class CabezaController extends Controller
                 DB::raw('MAX(d.cabeza_id) AS cabeza_id'),
                 'f.id AS financia_id',
                 DB::raw("'' AS tipo"),
-                'f.codigo AS financia_codigo',
+                DB::raw("'' AS financia_codigo"),
                 DB::raw("'' AS fondo"),
                 'p.id AS pofi_id',
                 'p.codigo AS pofi_codigo',
