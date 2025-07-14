@@ -313,7 +313,7 @@ class CabezaController extends Controller
                     ->where('o.id', '=', session('idredx'))
                     ->whereRaw('c.id = d.cabeza_id');
             })
-            ->groupBy('f.id', 'p.id', 'p.color', 'p.pofi', DB::raw("''"), DB::raw("''"), DB::raw("''"))
+            ->groupBy('p.id', 'p.codigo', 'p.pofi', 'p.color')
             ->orderBy('pofi_id')
             ->get();
 
