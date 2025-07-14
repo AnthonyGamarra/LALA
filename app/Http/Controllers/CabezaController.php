@@ -280,7 +280,7 @@ class CabezaController extends Controller
                 DB::raw('MAX(d.cabeza_id) AS cabeza_id'),
                 'f.id AS financia_id',
                 DB::raw("'' AS tipo"),
-                DB::raw("'' AS financia_codigo"),
+                'f.codigo AS financia_codigo',
                 DB::raw("'' AS fondo"),
                 'p.id AS pofi_id',
                 'p.codigo AS pofi_codigo',
@@ -313,7 +313,7 @@ class CabezaController extends Controller
                     ->where('o.id', '=', session('idredx'))
                     ->whereRaw('c.id = d.cabeza_id');
             })
-            ->groupBy('p.id', 'p.codigo', 'p.pofi', 'p.color')
+            ->groupBy('f.id', 'p.id', 'f.fondo', 'p.color', 'p.pofi')
             ->orderBy('pofi_id')
             ->get();
 
