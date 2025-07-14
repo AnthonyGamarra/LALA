@@ -280,12 +280,12 @@ class CabezaController extends Controller
                 DB::raw('MAX(d.cabeza_id) AS cabeza_id'),
                 'f.id AS financia_id',
                 'f.codigo AS financia_codigo',
-                //'f.fondo', // OMITIDO
+                'f.fondo',
                 'p.id AS pofi_id',
                 'p.codigo AS pofi_codigo',
                 'p.pofi',
                 'p.color',
-                //'d.tipo', // OMITIDO
+                'd.tipo',
                 DB::raw('SUM(d.estimacion) AS estimacion'),
                 DB::raw('SUM(d.enero) AS enero'),
                 DB::raw('SUM(d.febrero) AS febrero'),
@@ -313,12 +313,12 @@ class CabezaController extends Controller
                     ->where('o.id', '=', session('idredx'))
                     ->whereRaw('c.id = d.cabeza_id');
             })
-            ->groupBy('f.id', 'p.id', 'p.color', 'p.pofi') // OMITIDO 'f.fondo', 'd.tipo'
+            ->groupBy('f.id', 'p.id', 'd.tipo', 'f.fondo', 'p.color', 'p.pofi')
             ->orderBy('pofi_id')
             ->get();
 
-        $archivo3 = session('redx').'-ConsolidadoDeRed.xlsx';
-        return Excel::download(new DetalleExport($detalles,3),$archivo3);//tipo3=consolidado de RED
+            $archivo3 = session('redx').'-ConsolidadoDeRed.xlsx';
+            return Excel::download(new DetalleExport($detalles,3),$archivo3);//tipo3=consolidado de RED
 
     }
 
