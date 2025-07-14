@@ -133,6 +133,7 @@ class DetalleExport implements FromArray, WithHeadings, WithStyles, ShouldAutoSi
             $row->financia_codigo,
             $row->pofi_codigo, 
             $row->pofi,
+            $row->tipo,
             $row->estimacion,
             $row->enero,
             $row->febrero,
