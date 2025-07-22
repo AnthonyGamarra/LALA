@@ -89,7 +89,7 @@ class CabezaOoccController extends Controller
     public function agregarActividad(Request $request)
     {
         $request->validate([
-            'actividad' => 'required|string|max:200',
+            'actividad' => 'required|string|max:300',
             // 'prioridad' => 'required|integer|between:1,3',
             'fondo' => 'required|integer',
             'oocc_id' => 'required|integer'
