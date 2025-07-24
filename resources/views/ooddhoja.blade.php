@@ -340,7 +340,8 @@
     <div class="nota">
         Nota.-
         <BR>1. Precisar el nivel de prioridad, sea 1, 2, 3, …. Donde 1 es la actividad más prioritaria.
-        <BR>2. Tipo de gasto: <I> ineludible, <O> Otro gasto operativo																
+        <BR>2. Tipo de gasto: <I> ineludible, <O> Otro gasto operativo		
+        <BR>3. Solo ingresar números enteros positivos    														
 
 
     </div>
